@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>$NOT Presale</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+        body {
+            font-family: "Roboto", serif;
+            font-weight: 400;
+            font-style: static;
+            background-color: #121212;
+            color: #ffffff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .top-bar {
+            width: calc(100% - 30px);
+            height: 60px;
+            background-color: #f0f0f0;
+            display: flex;
+            align-items: center;
+            padding-left: 30px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+        }
+
+        .top-bar img {
+            height: 30px;
+            margin-right: 10px;
+        }
+
+        .background {
+            position: absolute;
+            top: 60px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url('background.jpg'); /* Replace with your image */
+            background-size: cover;
+            background-position: center;
+            z-index: 0;
+        }
+
+        .container {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 20px;
+            border-radius: 10px;
+            background: linear-gradient(145deg, #1e1e1e, #2a2a2a);
+            box-shadow: 5px 5px 15px #0e0e0e, -5px -5px 15px #383838;
+            width: 90%;
+            max-width: 500px;
+            margin: auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            margin: 10px 0;
+            color: #f0f0f0;
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            background-color: #333333;
+            border-radius: 20px;
+            margin: 20px 0;
+            overflow: hidden;
+            height: 20px;
+            position: relative;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background-color: #f0f0f0;
+            width: 81%;
+            position: absolute;
+            display: flex;
+            align-items: center;
+            justify-content: right;
+            padding-right: 4px;
+            color: #000000;
+            font-weight: bold;
+        }
+
+        .buy-button {
+            display: inline-block;
+            padding: 15px 30px;
+            font-size: 1rem;
+            color: #ffffff;
+            background-color: #b40000;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .buy-button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Centering adjustments */
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <img src="logo.png" alt="Nothing Logo">
+    </div>
+    <div class="background"></div>
+    <div class="container">
+        <h1>Presale of $NOT</h1>
+        <div class="price" id="price">Current Price: $0.53000</div>
+        <div class="progress-bar-container">
+            <div class="progress-bar" id="progress-bar">81%</div>
+        </div>
+        <a href="https://buy.stripe.com/5kAdUK9aK4vI5wceUU" class="buy-button">BUY $NOT</a>
+    </div>
+
+    <script>
+        // Simulate price fluctuation
+        const priceElement = document.getElementById('price');
+
+        function updatePrice() {
+            const fluctuation = (Math.random() - 0.5) * 0.005;
+            const price = 0.53 + fluctuation;
+            priceElement.textContent = `Current Price: $${price.toFixed(5)}`;
+        }
+
+        setInterval(updatePrice, 100);
+    </script>
+</body>
+</html>
