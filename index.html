@@ -140,18 +140,6 @@
         </div>
         <a href="https://buy.stripe.com/5kAdUK9aK4vI5wceUU" class="buy-button">BUY $NOT</a>
     </div>
-
-    <script>
-        // Simulate price fluctuation
-        const priceElement = document.getElementById('price');
-
-        function updatePrice() {
-            const fluctuation = (Math.random() - 0.5) * 0.005;
-            const price = 0.53 + fluctuation;
-            priceElement.textContent = `Current Price: $${price.toFixed(5)}`;
-        }
-
-        setInterval(updatePrice, 100);
-    </script>
+    <script src="price.js"></script>
 </body>
 </html>
